@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// next.config.js
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: true,
+    images: {
+      domains: ['store.storeimages.cdn-apple.com'],
+    },
+  }
+  
+  module.exports = nextConfig
