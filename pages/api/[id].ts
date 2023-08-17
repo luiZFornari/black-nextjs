@@ -1,7 +1,7 @@
 // pages/api/products/[id].ts
 
 import { NextApiRequest, NextApiResponse } from "next"
-import products from '../../../database.json'
+import products from '../../database.json'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query

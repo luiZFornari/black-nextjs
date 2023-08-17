@@ -4,9 +4,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { ReactNode } from "react";
 import { Container } from "reactstrap";
-import Header from "../../../src/components/Header";
-import ProductDetails from "../../../src/components/ProductDetails";
-import { fetchProduct, fetchProducts, ProductType } from "../../../src/services/Products";
+import Header from "../../src/components/Header";
+import ProductDetails from "../../src/components/ProductDetails";
+import { fetchProduct, fetchProducts, ProductType } from "../../src/services/Products";
 import React from "react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
