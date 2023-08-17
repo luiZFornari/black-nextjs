@@ -32,9 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return { paths, fallback: false }
   }
 
-// pages/products/[id].tsx
-
-// ...
 
 const Product: NextPage = (props: {
     children?: ReactNode
