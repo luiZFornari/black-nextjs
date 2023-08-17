@@ -4,8 +4,8 @@ import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
 import { Button, Card, CardBody, CardSubtitle } from "reactstrap"
-import { ProductType } from "./Products"
-import SuccessToast from "../components/SuccessToast"
+import { ProductType } from "../services/Products"
+import SuccessToast from "./SuccessToast"
 
 type ProductCardProps = {
   product: ProductType

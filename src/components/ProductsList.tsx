@@ -3,7 +3,7 @@
 import React from "react"
 import { Col, Row } from "reactstrap"
 import { ProductType } from "../services/Products"
-import ProductCard from "../services/ProductCard"
+import ProductCard from "./ProductCard"
 
 type ProductListProps = {
   products: ProductType[]
