@@ -15,6 +15,6 @@ export type ProductType = {
   }
   
   export const fetchProduct = async (id: string | number) => {
-    const product: ProductType = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/api/${id}`).then(res => res.json())
+    const product: ProductType = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/api/products/${id}`).then(res => res.json())
     return product
   }
