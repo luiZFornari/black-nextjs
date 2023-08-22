@@ -2,19 +2,24 @@
 
 import { NextPage } from "next";
 import Head from "next/head";
+import CartTable from "../src/components/CartTable"
+import { Container } from "reactstrap";
+import CartTotal from "../src/components/CardTotal"
+
 
 const Cart: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Carrinho</title>
-        <meta name="description" content="Meu carrinho de compras" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     <main>
+        <Container className="mb-5">
+          <h1 className="my-5">
+            Carrinho
+          </h1>
 
-      <h1>
-        Carrinho
-      </h1>
+          <CartTable />
+          <CartTotal />
+        </Container>
+      </main>  
     </>
   )
 }
