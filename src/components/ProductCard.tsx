@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <>
     <Card>
       <Link href={`/products/${id}`}>
-        <Image className="card-img-top" src={imageUrl} alt="Product" height={200} width={300} />
+        <Image className="card-img-top" src={imageUrl} alt="Product" height={500} width={600} />
       </Link>
 
       <CardBody>
@@ -51,6 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <SuccessToast toastIsOpen={toastIsOpen} setToastIsOpen={setToastIsOpen} />
     </>
   )
+  
 }
 
 export default ProductCard
