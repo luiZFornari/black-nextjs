@@ -1,21 +1,21 @@
 // pages/products.tsx
 
-import { GetStaticProps, NextPage } from 'next'
-import Head from 'next/head'
-import { ReactNode } from 'react'
-import { Container } from 'reactstrap'
-import Header from '../src/components/Header'
-import ProductsList from '../src/components/ProductsList'
-import { fetchProducts, ProductType } from '../src/services/Products'
+import { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
+import { ReactNode } from "react";
+import { Container } from "reactstrap";
+import Header from "../src/components/Header";
+import ProductsList from "../src/components/ProductsList";
+import { fetchProducts, ProductType } from "../src/services/Products";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const products = await fetchProducts()
-  return { props: { products } }
-}
+export const getServerSideProps: GetServerSideProps = async () => {
+  const products = await fetchProducts();
+  return { props: { products } };
+};
 
 const Products: NextPage = (props: {
-  children?: ReactNode
-  products?: ProductType[]
+  children?: ReactNode;
+  products?: ProductType[];
 }) => {
   return (
     <>
@@ -29,15 +29,13 @@ const Products: NextPage = (props: {
 
       <main>
         <Container className="mb-5">
-          <h1 className="my-5">
-            Nossos Produtos
-          </h1>
+          <h1 className="my-5">Nossos Produtos</h1>
 
           {<ProductsList products={props.products!} />}
         </Container>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

@@ -4,8 +4,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['store.storeimages.cdn-apple.com'],
+    domains: ["store.storeimages.cdn-apple.com"],
   },
-}
+  staticPageGenerationTimeout: 100,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

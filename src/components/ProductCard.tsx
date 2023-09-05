@@ -1,60 +1,64 @@
 // src/components/ProductCard.tsx
 
-import Image from "next/image"
-import Link from "next/link"
-import React, { useState } from "react"
-import { Button, Card, CardBody, CardSubtitle } from "reactstrap"
-import { ProductType } from "../services/Products"
-import { useCart } from "../hooks/useCart"
-import SuccessToast from "./SuccessToast"
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { Button, Card, CardBody, CardSubtitle } from "reactstrap";
+import { ProductType } from "../services/Products";
+import { useCart } from "../hooks/useCart";
+import SuccessToast from "./SuccessToast";
 
 type ProductCardProps = {
-  product: ProductType
-}
+  product: ProductType;
+};
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const [toastIsOpen, setToastIsOpen] = useState(false)
-  const { id, name, imageUrl, price } = product
-  const { addProduct } = useCart()
+  const [toastIsOpen, setToastIsOpen] = useState(false);
+  const { id, name, imageUrl, price } = product;
+  const { addProduct } = useCart();
 
   return (
     <>
-    <Card>
-      <Link href={`/products/${id}`}>
-        <Image className="card-img-top" src={imageUrl} alt="Product" height={500} width={600} />
-      </Link>
-
-      <CardBody>
+      <Card>
         <Link href={`/products/${id}`}>
-          <h5 className="card-title" style={{ cursor: 'pointer' }}>
-            {name}
-          </h5>
+          <Image
+            className="card-img-top"
+            src={imageUrl}
+            alt="Product"
+            height={300}
+            width={300}
+          />
         </Link>
 
-        <CardSubtitle className="mb-3 text-muted" tag="h6">
-          R$ {price}
-        </CardSubtitle>
+        <CardBody>
+          <Link href={`/products/${id}`}>
+            <h5 className="card-title" style={{ cursor: "pointer" }}>
+              {name}
+            </h5>
+          </Link>
 
-        <Button
+          <CardSubtitle className="mb-3 text-muted" tag="h6">
+            R$ {price}
+          </CardSubtitle>
+
+          <Button
             color="dark"
             className="pb-2"
             block
             onClick={() => {
-              addProduct(product)
-              setToastIsOpen(true)
-              setTimeout(() => setToastIsOpen(false), 1000 * 3)
+              addProduct(product);
+              setToastIsOpen(true);
+              setTimeout(() => setToastIsOpen(false), 1000 * 3);
             }}
           >
             Adicionar ao Carrinho
           </Button>
+        </CardBody>
+      </Card>
 
-      </CardBody>
-    </Card>
-
-    <SuccessToast toastIsOpen={toastIsOpen} setToastIsOpen={setToastIsOpen} />
+      <SuccessToast toastIsOpen={toastIsOpen} setToastIsOpen={setToastIsOpen} />
     </>
-  )
-  
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
